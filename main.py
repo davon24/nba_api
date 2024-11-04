@@ -15,10 +15,8 @@ def get_posts(api_key=None):
         
         # Parse the JSON response
         posts = response.json()
-        
-        # Print each post's title
-        for post in posts['data']:
-            print(f"Post ID: {post['id']}, Name: {post['first_name']} {post['last_name']}")
+       
+        return posts 
     
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
@@ -26,5 +24,3 @@ def get_posts(api_key=None):
     except Exception as err:
         print(f"Other error occurred: {err}")
 
-# Call the function
-get_posts('0ffd0a74-bb46-49b4-9af5-5fc04319f082')
